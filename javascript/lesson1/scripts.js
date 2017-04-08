@@ -19,6 +19,10 @@ var operations = {
     }
 };
 
+document.addEventListener('keyup', function(event) {
+    console.log('keyup:', event);
+}); 
+
 document.querySelectorAll('button').forEach(function(button) {
     button.addEventListener('click', function(event) {
         var value = event.target.innerText.toLowerCase().trim();
