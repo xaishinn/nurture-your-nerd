@@ -18,12 +18,26 @@ body {
     clear: both;
 }
 
-#preview {
-    display: block;
-    width: 100%;
-    font-size: 50px;
+#op-preview, #preview {
     border: none;
+}
+
+#op-preview {
+    opacity: 0.25;
+    font-size: 35px;
+    line-height: 15px;
+    vertical-align: text-top;
+    font-weight: lighter;
+    text-align: left;
+    float: left;
+    width: 10%;
+}
+
+#preview {
+    font-size: 50px;
     text-align: right;
+    float: right;
+    width: 90%;
 }
 
 #numbers, #operations {
