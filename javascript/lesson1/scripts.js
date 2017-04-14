@@ -8,11 +8,12 @@ var previousValue = null;
 var pendingOperation = null;
 
 // Define a string of characters that the keyboard will write to the calculator
-var listenKeys = '0123'
+var listenKeys = '0123456789.'
 
 // Define an array of keys to listen for evaluating the calculator
 var evaluationKeys = [
-    '='
+    '=',
+    'enter',
 ];
 
 // Define calculator options (by key)
@@ -20,7 +21,11 @@ var operationKeys = {
     // Define the '+' (plus) operation function
     '+': function(a, b) {
         return a + b;
+    },
+    '-': function(a, b) {
+        return a - b;
     }
+
 };
 
 // Run calculation
@@ -49,8 +54,9 @@ function triggerOperation(op) {
 
 // Button pressed handler
 function pressCalculatorButton(button) {
+    console.log(button) 
     var value = button.toLowerCase().trim();
-
+    console.log(value)
     if (evaluationKeys.indexOf(value) !== -1) {
         calculate();
     } else if (typeof operationKeys[value] === 'function') {
